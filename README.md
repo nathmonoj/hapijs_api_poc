@@ -117,7 +117,7 @@ Success
 
 ```errors
 Errors
-For duplocate entry
+For duplicate entry
 {
     "statusCode": "DUPLICATE_ENTRY",
     "message": "Duplicate entry 'test@test.comd' for key 'email'"
@@ -129,9 +129,187 @@ If any required parameter is missed
     "message": "Invalid parameters. The parameters that must be send are 'email' and 'name' and 'role'."
 }
 Or
+For not sending the required parameters ::
+{
+    "statusCode": "INVALID_PARAMETERS",
+    "message": "Invalid parameters. The parameters that must be send are 'email' and 'name' and 'role'."
+}
 For non allowed parameters ::
 {
     "statusCode": "INVALID_PARAMETERS",
     "message": "Parameter 'emails' is not allowed"
+}
+```
+
+## Update Employee Record
+Description : Creates an employee record.
+
+Endpoint URL:  {hostDomain}/employee/create
+```endpoint
+http://localhost:3000/employee/update/{id}
+```
+
+Method :
+```method
+PUT
+```
+
+Request Headers :
+```header
+Content-Type application/json
+```
+
+Authentication :
+```authentication
+Basic Auth with username  as hapijsapipocv1 and password as J&jHapiJs@Poc2022
+```
+
+Request body(minimum 1 or all keys can be send in json format) :
+| Key           | Value         |
+| ------------- |:-------------:|
+| email         | Employee Email|
+| name          | Employee Name |
+| role          | Employee Role |
+```sample
+Sample body
+{
+    "name":"Monoj",
+    "email":"test@test.coms"
+}
+```
+
+Response :
+```success
+Success
+{
+    "statusCode": "OK",
+    "message": "Employee record updated successfully."
+}
+```
+
+```errors
+Errors
+For No user found
+{
+    "statusCode": "OK",
+    "message": "No such Employee record was found with 'id = 1'."
+}
+```
+
+## Get Employee Record
+Description : Creates an employee record.
+
+Endpoint URL:  {hostDomain}/employee/get
+```endpoint
+http://localhost:3000/employee/get
+```
+
+Method :
+```method
+GET
+```
+
+Authentication :
+```authentication
+Basic Auth with username  as hapijsapipocv1 and password as J&jHapiJs@Poc2022
+```
+
+Request params(any one of the below keys are allowed) :
+| Key           | Value         |
+| ------------- |:-------------:|
+| id            | Employee Id|
+| email         | Employee Email|
+
+Response :
+```success
+Success
+{
+    "statusCode": "OK",
+    "message": "Employee record created successfully with employee id '4'."
+}
+```
+
+```errors
+Errors
+For No user found
+{
+    "statusCode": "USER_NOT_FOUND",
+    "message": "No such Employee record was found with 'email = test@test.com'."
+}
+Or
+{
+    "statusCode": "USER_NOT_FOUND",
+    "message": "No such Employee record was found with 'id = 4'."
+}
+Or
+For not sending the required parameters ::
+{
+    "statusCode": "INVALID_PARAMETERS",
+    "message": "Invalid parameters. The parameters that must be send is 'id' or 'email'."
+}
+Or
+For non allowed parameters ::
+{
+    "statusCode": "INVALID_PARAMETERS",
+    "message": "Parameter 'ids' is not allowed"
+}
+```
+
+## Delete Employee Record
+Description : Creates an employee record.
+
+Endpoint URL:  {hostDomain}/employee/get
+```endpoint
+http://localhost:3000/employee/get
+```
+
+Method :
+```method
+DELETE
+```
+
+Authentication :
+```authentication
+Basic Auth with username  as hapijsapipocv1 and password as J&jHapiJs@Poc2022
+```
+
+Request params(any one of the below keys are allowed) :
+| Key           | Value         |
+| ------------- |:-------------:|
+| id            | Employee Id|
+| email         | Employee Email|
+
+Response :
+```success
+Success
+{
+    "statusCode": "OK",
+    "message": "Employee record created successfully with employee id '4'."
+}
+```
+
+```errors
+Errors
+For No user found
+{
+    "statusCode": "USER_NOT_FOUND",
+    "message": "No such Employee record was found with 'email = test@test.com'."
+}
+Or
+{
+    "statusCode": "USER_NOT_FOUND",
+    "message": "No such Employee record was found with 'id = 4'."
+}
+Or
+For not sending the required parameters ::
+{
+    "statusCode": "INVALID_PARAMETERS",
+    "message": "Invalid parameters. The parameters that must be send is 'id' or 'email'."
+}
+Or
+For non allowed parameters ::
+{
+    "statusCode": "INVALID_PARAMETERS",
+    "message": "Parameter 'ids' is not allowed"
 }
 ```
