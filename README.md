@@ -1,2 +1,3 @@
-# hapidev_api_poc
-A POCto explore the hapidev framework
+# Hapi Js Api POC
+> A POC to explore the hapi js framework and apis. The version1 supports usage of hapijs plugins, modules, routings, database interaction and crud operations via api endpoints.
+
