@@ -81,7 +81,6 @@ Sample Success response
             "created": "2022-12-28T10:00:45.000Z",
             "updated": null
         }
-
     ]
 }
 ```
