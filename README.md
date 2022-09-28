@@ -61,7 +61,27 @@ Sample Success response
             "role": "Test Role",
             "created": "2022-09-28T10:00:45.000Z",
             "updated": null
+        },
+        {
+            "id": 5,
+            "email": "test@test1.com",
+            "name": "Test User1",
+            "role": "Test Role1",
+            "created": "2022-10-28T10:00:45.000Z",
+            "updated": null
+        },
+        .......
+        .......
+        .......
+        {
+            "id": 25,
+            "email": "test@test25.com",
+            "name": "Test User25",
+            "role": "Test Role25",
+            "created": "2022-12-28T10:00:45.000Z",
+            "updated": null
         }
+
     ]
 }
 ```
