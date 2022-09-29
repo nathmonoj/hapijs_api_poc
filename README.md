@@ -1,5 +1,5 @@
 # Hapi Js Api POC
-> A POC to explore the hapi js framework and apis. The version1 supports usage of hapijs plugins, modules, routings, database interaction and crud operations via api endpoints.
+> A POC to explore the hapi js framework and apis. The version1 supports usage of hapijs plugins, modules, routings, database interaction and crud operations via api endpoints. This POC is showcasing a simple example of Employee Management System where you can view list of all employees, create new employee record, update employee record, get specific employe record and delete sployee record.
 
 __Table of contents__
 
