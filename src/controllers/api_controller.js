@@ -71,7 +71,8 @@ exports.employeeCreate = (req, res) => {
         // Returning the record creation success response.
         let response = {
           statusCode: 'OK',
-          message: `Employee record created successfully with employee id '${row.insertId}'.`
+          message: `Employee record created successfully with employee id '${row.insertId}'.`,
+          data: Object.assign({ 'id': row.insertId }, param_check.checked_data)
         };
         return response;
       }).catch(err => {

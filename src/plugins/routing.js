@@ -70,12 +70,6 @@ exports.plugin = {
       path: '/home',
       handler: generic_controller.home
     });
-    // Create the help route.
-    server.route({
-      method: 'GET',
-      path: '/help',
-      handler: generic_controller.help
-    });
     // Create the api routes.
     // Get all employee route.
     server.route({

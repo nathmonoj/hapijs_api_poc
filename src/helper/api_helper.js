@@ -70,16 +70,7 @@ const checkApiParamsOrPayload = (data_to_check, allowed_params, param_length_lim
       };
     }
   }
-  /* if (Object.keys(data_to_check).length != param_length_limit) {
-    param_check = {
-      is_error: true,
-      error_msg: {
-        statusCode: 'INVALID_PARAMETERS',
-        message: `Invalid parameters. The parameters that must be send ${(check_type == 'and') ? 'are' : 'is'} '${Object.keys(allowed_params).join(`' ${check_type} '`)}'.`
-      }
-    };
-  }
-  else { */
+  // Proceeding if allowed to check data.
   if (allow_check) {
     Object.entries(data_to_check).every(([key, value]) => {
       if (!(key in allowed_params)) {

@@ -55,7 +55,7 @@ Sample Success response
     "message": "All employee data retrieved",
     "data": [
         {
-            "id": 4,
+            "id": 1,
             "email": "test@test.com",
             "name": "Test User",
             "role": "Test Role",
@@ -63,10 +63,10 @@ Sample Success response
             "updated": null
         },
         {
-            "id": 5,
-            "email": "test@test1.com",
-            "name": "Test User1",
-            "role": "Test Role1",
+            "id": 2,
+            "email": "test@test2.com",
+            "name": "Test User2",
+            "role": "Test Role2",
             "created": "2022-10-28T10:00:45.000Z",
             "updated": null
         },
