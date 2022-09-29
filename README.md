@@ -130,7 +130,13 @@ Response :
 Success
 {
     "statusCode": "OK",
-    "message": "Employee record created successfully with employee id '4'."
+    "message": "Employee record created successfully with employee id '1'.",
+    "data": {
+        "id": 1,
+        "email": "testuser@test.com",
+        "name": "Test User",
+        "role": "Test Role"
+    }
 }
 ```
 
