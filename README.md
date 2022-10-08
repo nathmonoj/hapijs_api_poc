@@ -5,6 +5,7 @@ __Table of contents__
 
   - [System Requirements](#system-requirements)
   - [Application Installation](#application-installation)
+  - [Setting Up Application](#setting-up-application)
   - [Initiating Application](#initiating-application)
   - [Site Basic Authentication](#site-basic-authentication)
   - [Api V1 Details](#api-v1-details)
@@ -20,6 +21,11 @@ __Table of contents__
  - Go to the project folder "hapijs_api_poc"
  - ```bash run command "npm install" ```
  - You will see the "node_modules" folder got generated and the project is ready now
+
+## Setting Up Application
+
+ - Go to the project folder "hapijs_api_poc" and run command "node serversetup"
+ - The final console log will be "Server setup Completed..." and your application environment is now setup and configured
 
 ## Initiating Application
 

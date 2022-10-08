@@ -13,13 +13,9 @@ const server = new Hapi.Server({
 
 // Creating Server initiating method and exporting it as a module.
 module.exports = {
+  server_obj: server,
   init: async () => {
     try {
-      // Starting the server.
-      await server.start();
-      // Getting the employee list.
-      connector.init();
-
       // Load the routing plugin to register the api routes.
       await server.register([
         // Registering the Route plugin.
@@ -28,8 +24,22 @@ module.exports = {
           options: {}
         }
       ]);
+      // Starting the server.
+      await server.start();
+      // Initialising the db connector.
+      await connector.init();
       // Once started log the server initiation.
       console.log(`Server running at: ${server.info.uri}...`);
+    }
+    catch (err) {
+      // Catching and logging the error.
+      console.log(err)
+    }
+  },
+  setup: async () => {
+    try {
+      // Setting up the db environment.
+      connector.setup(server);
     }
     catch (err) {
       // Catching and logging the error.

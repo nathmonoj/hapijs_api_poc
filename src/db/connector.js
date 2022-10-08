@@ -19,9 +19,9 @@ let promise_pool;
 
 // Creating connector methods and exporting it as a module.
 module.exports = {
-  init: async () => {
+  setup: async (server) => {
     try {
-      const connection = mysql.createConnection(connection_settings);
+      const connection = await mysql.createConnection(connection_settings);
       connection.connect(function (error) {
         // Checking and throwing if connection connect error.
         if (error) throw error;
@@ -37,12 +37,22 @@ module.exports = {
             if (error) throw error;
             console.log(`Table "${table_name}" checked/created...`);
             connection.destroy();
-            // Initialising the db connecion pool.
-            promise_pool = mysql.createPool(pooling_connection_settings).promise();
-            console.log(`Connection Pool initialised...`);
+            // Once started log the server initiation.
+            console.log(`Server setup done at: ${server.info.uri}...`);
           });
         });
       });
+    }
+    catch (err) {
+      // Catching and logging the error.
+      throw err;
+    }
+  },
+  init: async () => {
+    try {
+      // Initialising the db connecion pool.
+      promise_pool = await mysql.createPool(pooling_connection_settings).promise();
+      console.log(`Connection Pool initialised...`);
     }
     catch (err) {
       // Catching and logging the error.
