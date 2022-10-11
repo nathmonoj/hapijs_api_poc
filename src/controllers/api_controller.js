@@ -186,16 +186,8 @@ exports.employeeGet = (req, res) => {
         return response;
       }).catch(err => {
         // Returning the pool error.
-        if (err && err.code == 'ER_DUP_ENTRY') {
-          return {
-            statusCode: 'DUPLICATE_ENTRY',
-            message: err.sqlMessage
-          };
-        }
-        else {
-          console.log(err);
-          throw err;
-        }
+        console.log(err);
+        throw err;
       });
   }
   catch (err) {
@@ -236,16 +228,8 @@ exports.employeeDelete = (req, res) => {
         return response;
       }).catch(err => {
         // Returning the pool error.
-        if (err && err.code == 'ER_DUP_ENTRY') {
-          return {
-            statusCode: 'DUPLICATE_ENTRY',
-            message: err.sqlMessage
-          };
-        }
-        else {
-          console.log(err);
-          throw err;
-        }
+        console.log(err);
+        throw err;
       });
   }
   catch (err) {

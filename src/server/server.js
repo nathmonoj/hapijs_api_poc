@@ -39,7 +39,7 @@ module.exports = {
   setup: async () => {
     try {
       // Setting up the db environment.
-      connector.setup(server);
+      connector.setup();
     }
     catch (err) {
       // Catching and logging the error.

@@ -4,7 +4,7 @@
   "description": "A POC to create api callbacks using hapidev",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "lab --assert @hapi/code --coverage -r html -o ./test/lab-test-report.html"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,9 @@
   "license": "ISC",
   "dependencies": {
     "@hapi/basic": "^7.0.0",
+    "@hapi/code": "^9.0.1",
     "@hapi/hapi": "^20.2.2",
+    "@hapi/lab": "^25.0.1",
     "@hapi/vision": "^7.0.0",
     "hbs": "^4.2.0",
     "mysql2": "^2.3.3"

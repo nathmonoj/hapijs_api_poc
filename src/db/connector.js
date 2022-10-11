@@ -19,7 +19,7 @@ let promise_pool;
 
 // Creating connector methods and exporting it as a module.
 module.exports = {
-  setup: async (server) => {
+  setup: async () => {
     try {
       const connection = await mysql.createConnection(connection_settings);
       connection.connect(function (error) {
@@ -38,7 +38,7 @@ module.exports = {
             console.log(`Table "${table_name}" checked/created...`);
             connection.destroy();
             // Once started log the server initiation.
-            console.log(`Server setup done at: ${server.info.uri}...`);
+            console.log(`Server setup Completed...`);
           });
         });
       });
@@ -62,41 +62,6 @@ module.exports = {
   getPromisePool: () => {
     try {
       return promise_pool;
-    }
-    catch (err) {
-      // Catching and logging the error.
-      throw err;
-    }
-  },
-
-  // Get allthe eployee list.
-  getEployeeList: async () => {
-    try {
-      promise_pool.getConnection()
-        .then(conn => {
-          const result = conn.query(`select * from ${table_name};`);
-          conn.release();
-          return result;
-        }).then(([rows, fields]) => {
-          return rows;
-        }).catch(err => {
-          console.log(err); // any of connection time or query time errors from above
-          throw err;
-        });
-
-
-      /* pool.getConnection(function (connection_error, connection) {
-        // Checking and throwing if pool getconnection error.
-        if (connection_error) throw connection_error;
-        connection.query(`select * from ${table_name} limit 10;`, function (error, results, fields) {
-          // Checking and throwing if connection query error.
-          if (error) throw error;
-          // Else proceeding with the query;
-          console.log('The query result is: ', results);
-          // Releasing the connection.
-          pool.releaseConnection(connection);
-        });
-      }); */
     }
     catch (err) {
       // Catching and logging the error.
