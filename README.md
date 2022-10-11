@@ -9,6 +9,7 @@ __Table of contents__
   - [Initiating Application](#initiating-application)
   - [Site Basic Authentication](#site-basic-authentication)
   - [Api V1 Details](#api-v1-details)
+  - [Introductory Hapi Lab Tests](#introductory-hapi-lab-tests)
 
 ## System Requirements
 
@@ -344,3 +345,10 @@ For non allowed parameters ::
     "message": "Parameter 'ids' is not allowed"
 }
 ```
+
+## Introductory Hapi Lab Tests
+ - Go to the project folder "hapijs_api_poc"
+ - ```bash run command "npm test" ```
+ - You will see the a html file has been generated as "lab-test-report.html" inside the "test" folder
+ - Open the html report file in browser and check the lab test report and code coverage generated. You may now play through the lab tests
+ - For reference please go through https://hapi.dev/module/lab/ & https://hapi.dev/module/code/
