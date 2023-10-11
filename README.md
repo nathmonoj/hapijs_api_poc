@@ -18,7 +18,7 @@ __Table of contents__
 
 ## Application Installation
 
- - Download/Clone the code from https://github.com/nathmonoj2014/hapijs_api_poc
+ - Download/Clone the code from https://github.com/nathmonoj/hapijs_api_poc
  - Go to the project folder "hapijs_api_poc"
  - ```bash run command "npm install" ```
  - You will see the "node_modules" folder got generated and the project is ready now
